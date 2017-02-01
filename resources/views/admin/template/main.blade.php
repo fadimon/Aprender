@@ -7,7 +7,16 @@
 </head>
 <body>
 @include('admin.template.partials.nav')
-<section>@yield('contenido')</section>
+
+<section>
+@yield('contenido')
+		
+</section>
+<footer>
+	
+	Todos los derechos reservados tipmatik.cl
+
+</footer>
 <script src="{{asset('Plugins/Jquery/js/jquery.js')}}"></script><!-- Instalacion de jquery -->
 <script src="{{asset('plugins/bootstrap/js/bootstrap.js')}}"></script> <!-- Instalacion de bootstrap -->
 </body>

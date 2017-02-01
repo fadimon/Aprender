@@ -15,16 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/nosotros', 'PaginasController@nosotros');
-Route::get('/contacto', 'PaginasController@contacto');
 
-Route::group(['prefix'=>'articles'],function(){
+Route::group(['prefix'=>'admin'],function(){
 
-	route::get('view/{id}',[
-
-		'uses' => 'TestController@view',
-		'as' =>  'articlesView'
-		]);
+	route::resource('users','UsersController');
 });
 
 

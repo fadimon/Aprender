@@ -96,6 +96,5 @@
     
 
 @section ('contenido')
-    <h1>Hola estoy en bootstrap</h1>
-    <a href="" class="btn btn-success">Soy un boton de bootstrap</a>
+        
 @endsection
