@@ -40,7 +40,7 @@ class UsersController extends Controller
         $usuario->password=bcrypt($request->password);
         $usuario->save();
         
-    }
+    } 
 
     /**
      * Display the specified resource.

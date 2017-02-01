@@ -1,3 +1,5 @@
-body{
-	background-color: green;
+
+#contenedor {
+  width: 70%;
+  margin: 0 auto;
 }

@@ -30,7 +30,10 @@
 
 		</tbody>
 	</table>
-	{{ $users->links() }}
+	{{ $users->links() }}<br>
+	<a href="{{route('users.create') }}" class="btn btn-info">Registrar Nuevo Usuario</a>
 	{{--{!!$users->render()!!} funciona igual que el de arriba pertenece a laravel 5.1(links)--}} 
+	{{--{!!$users->render()!!} funciona igual que el de arriba pertenece a laravel 5.1(links)--}}
 
 @endsection
+  
