@@ -1,5 +1,12 @@
 
-#contenedor {
+.contenedor {
   width: 70%;
   margin: 0 auto;
+}
+
+.borde{
+  border-top: 1px outset gray;
+  border-right: 1px outset gray;
+  border-bottom: 1px outset gray;
+  border-left: 1px outset gray;
 }

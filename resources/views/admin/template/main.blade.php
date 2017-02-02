@@ -7,21 +7,25 @@
 	<link rel="stylesheet"  href="{{asset('css/general.css')}} ">
 </head>
 <body>
-<div id="contenedor">
-@include('admin.template.partials.nav')
+	<div class="contenedor">
 
-<section >
-	
-@yield('contenido')
+		@include('admin.template.partials.nav')
+		<section >
+		@yield('contenido')
+		</section>
 		
-</section>
-<footer>
-	
-	Todos los derechos reservados tipmatik.cl
-
-</footer>
+		<footer>
+			<div  style="margin-top: 25px;">
+				<div class="borde">
+					
+					 <p>© Copyright 2016 - 2017. Tipmatik.Cl. All Rights Reserved. <span class="pull-right">Codigo Facilito</span></p>
+					 
+				</div>
+			</div>
+		</footer>
+	</div>	
 <script src="{{asset('Plugins/Jquery/js/jquery.js')}}"></script><!-- Instalacion de jquery -->
 <script src="{{asset('plugins/bootstrap/js/bootstrap.js')}}"></script> <!-- Instalacion de bootstrap -->
-</div>
+
 </body>
 </html> 
