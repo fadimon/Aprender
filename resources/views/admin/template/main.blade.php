@@ -6,22 +6,19 @@
 	<link rel="stylesheet"  href="{{asset('plugins/bootstrap/css/bootstrap.css')}} ">
 	<link rel="stylesheet"  href="{{asset('css/general.css')}} ">
 </head>
-<body>
+<body >
 	<div class="contenedor">
 
 		@include('admin.template.partials.nav')
+		@include('flash::message')	
 		<section >
-		@yield('contenido')
+			@yield('contenido')
 		</section>
 		
-		<footer>
-			<div  style="margin-top: 25px;">
-				<div class="borde">
-					
-					 <p>© Copyright 2016 - 2017. Tipmatik.Cl. All Rights Reserved. <span class="pull-right">Codigo Facilito</span></p>
-					 
-				</div>
-			</div>
+		<footer class="bordes">
+			
+			<p> © Copyright 2016 - 2017. Tipmatik.Cl. All Rights Reserved. <span class="pull-right"> Codigo Facilito </span></p>
+				
 		</footer>
 	</div>	
 <script src="{{asset('Plugins/Jquery/js/jquery.js')}}"></script><!-- Instalacion de jquery -->

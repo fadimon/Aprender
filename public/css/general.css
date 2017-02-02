@@ -1,12 +1,48 @@
 
-.contenedor {
-  width: 70%;
-  margin: 0 auto;
+#boton_crear_usuario{
+
+    padding-bottom:10px; 
+    margin-left:85% 
 }
 
-.borde{
-  border-top: 1px outset gray;
-  border-right: 1px outset gray;
-  border-bottom: 1px outset gray;
-  border-left: 1px outset gray;
+.contenedor {
+
+    width: 70%;
+	margin: 0 auto;
+}
+
+.bordes{
+
+    border-top: 1px outset gray;
+    border-right: 1px outset gray;
+    border-bottom: 1px outset gray;
+    border-left: 1px outset gray;
+}
+
+html
+{
+	position: relative; /*le damos una posición relativa, que nos servirá  como referencia para posicionar nuestro footer.*/
+    min-height: 100%; /*le damos una altura mínima del 100%, es decir que como mínimo nuestro documento html captara el 100% de la altura.*/ 
+}
+body
+{
+    margin: 0 0 30px;/* le damos un ‘margin-bottom (margen inferior)‘ igual a la altura de nuestro footer, para que el contenido y el footer no se solapen.*/
+}
+footer
+{
+    width: 70%;
+    bottom: 0; 
+    position: absolute;
+    height: 30px;
+    margin: 0 0 5px;
+   
+}  
+legend
+{
+    display: block;
+    padding-left: 10px;
+    font-size: 17px;
+    color: DimGray;  
+    font-weight: bold;
+    
 }
