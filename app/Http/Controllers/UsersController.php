@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\User;
-use Laracasts\Flash\Flash; //
+use Illuminate\Http\Request;
+
+//use Laracasts\Flash\Flash; //
 
 class UsersController extends Controller
 {
@@ -15,8 +16,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        $users= User::orderBy('id','ASC')->paginate(5);
-        return view('admin.users.index')->with('users',$users);
+        $users = User::orderBy('id', 'ASC')->paginate(5);
+        return view('admin.users.index')->with('users', $users);
     }
 
     /**
@@ -26,7 +27,7 @@ class UsersController extends Controller
      */
     public function create()
     {
-        return view('admin.users.create');  //me envia al formulario de registro de usuario
+        return view('admin.users.create'); //me envia al formulario de registro de usuario
     }
 
     /**
@@ -37,13 +38,13 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-        $usuario= new User($request->all());
-        $usuario->password=bcrypt($request->password);
+        $usuario           = new User($request->all());
+        $usuario->password = bcrypt($request->password);
         $usuario->save();
-        flash('Se ha registrado'.' '.$usuario->name.' '.'de forma exitosa!', 'success');
+        flash('Se ha registrado' . ' ' . $usuario->name . ' ' . 'de forma exitosa!', 'success')->important();
         return redirect()->route('users.index');
-        
-    } 
+
+    }
 
     /**
      * Display the specified resource.
