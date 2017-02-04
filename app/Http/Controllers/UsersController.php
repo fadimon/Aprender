@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UserRequest;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -36,7 +37,7 @@ class UsersController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(UserRequest $request)
     {
         $usuario           = new User($request->all());
         $usuario->password = bcrypt($request->password);
@@ -63,9 +64,12 @@ class UsersController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit($id) // envia el usuario que deseamos modificar hacia la vista Update donde lo procesaremos
+
     {
-        //
+        $usuario_edit = User::find($id);
+        return view('admin.users.edit')->with('usuario_edit', $usuario_edit);
+
     }
 
     /**
@@ -77,7 +81,16 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+
+        $usuario_actualizado = User::find($id);
+        // $usuario_actualizado->fill($request->all());//realiza la misma función de las siguientes tres lineas reemplata los datodel en el objeto User con los nuevos datos que esta recibiendo.
+        $usuario_actualizado->name  = $request->name;
+        $usuario_actualizado->email = $request->email;
+        $usuario_actualizado->type  = $request->type;
+        $usuario_actualizado->save();
+        flash('El usuario ' . $usuario_actualizado->name . ' ha sido actualizado de forma exitosa!', 'success')->important();
+        return redirect()->route('users.index');
+
     }
 
     /**
@@ -88,6 +101,11 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $usuario = User::find($id);
+        $usuario->delete();
+
+        flash('El usuario ' . $usuario->name . ' ha sido ELIMINADO exitosamente!', 'info')->important();
+        return redirect()->route('users.index');
+
     }
 }

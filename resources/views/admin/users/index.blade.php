@@ -3,11 +3,8 @@
 @section('title','Lista de Usuarios')
 
 @section('contenido')
-<div class="bordes">
+<div>
     <table class="table table-striped">
-        <legend>
-            Lista de Usuarios
-        </legend>
         <thead>
             <th>
                 ID
@@ -49,11 +46,11 @@
                     @endif
                 </td>
                 <td>
-                    <a class="btn btn-warning" href="">
+                    <a class="btn btn-warning" href="{{route('users.edit',$user->id)}}">
                         <span aria-hidden="true" class="glyphicon glyphicon-wrench">
                         </span>
                     </a>
-                    <a class="btn btn-danger" href="{{route('admin.users.destroy',$user->id)}}">
+                    <a class="btn btn-danger" href="{{route('admin.users.destroy',$user->id)}}" onclick="return confirm('¿Esta seguro de eliminar al usuario seleccionado?')">
                         <span aria-hidden="true" class="glyphicon glyphicon-remove-circle">
                         </span>
                     </a>

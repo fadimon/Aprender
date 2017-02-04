@@ -18,8 +18,12 @@ Route::get('/', function () {
 Route::group(['prefix' => 'admin'], function () {
 
     route::resource('users', 'UsersController');
+
     route::get('users/{id}/destroy', [
         'uses' => 'UsersController@destroy',
         'as'   => 'admin.users.destroy',
     ]);
+
+    route::resource('categories', 'CategoriesController');
+
 });
