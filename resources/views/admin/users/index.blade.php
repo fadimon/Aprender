@@ -59,8 +59,10 @@
             @endforeach
         </tbody>
     </table>
-    {{ $users->links() }}
-    <div id="boton_crear_usuario">
+    <div class="text-center">
+        {{ $users->links() }}
+    </div>
+    <div id="boton_crear">
         <a class="btn btn-info" href="{{route('users.create') }}">
             Nuevo Usuario
         </a>

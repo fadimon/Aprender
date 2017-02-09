@@ -4,7 +4,7 @@
 
 @section('contenido')
 <div class="well">
-    {!! Form::open(['route' =>'users.store','method'=>'POST']) !!}
+    {!! Form::open(['route' =>'users.store','method'=> 'POST']) !!}
     <div class="form-group">
         {!! Form::label('name','Nombre')!!}
             {!! Form::text('name',null,['class'=>'form-control','placeholder'=>'Nombre Completo','required'])!!}

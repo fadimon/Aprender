@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateUsersTable extends Migration
 {
@@ -18,8 +18,8 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->enum('type',['member','admin'])->default('member');//campo para saber si el usuario es miembro o admin con miembro por defecto
-            $table->rememberToken();
+            $table->enum('type', ['member', 'admin'])->default('member'); //campo para saber si el usuario es miembro o admin con miembro por defecto
+            $table->rememberToken()->unique(); //clave para el usuario que ingresa al sistema
             $table->timestamps();
         });
     }
