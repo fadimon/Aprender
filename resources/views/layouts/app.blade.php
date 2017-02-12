@@ -13,7 +13,7 @@
                         <link href="/css/app.css" rel="stylesheet">
                             <!-- Scripts -->
                             <script>
-                                window.Laravel = <?php echo json_encode([
+                                window.Laravel = <?php echo json_encode([  //window.laravel es una nueva variable que se esta creando con el valor del token para luego ser usada en algun script
             'csrfToken' => csrf_token(),
         ]); ?>
                             </script>

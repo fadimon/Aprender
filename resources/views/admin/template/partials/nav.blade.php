@@ -55,11 +55,28 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li>
-                            <a href="{{ url('/logout') }}">
+                            <a href="{{ url('/logout') }}" onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
                                 Salir
                             </a>
+                            <form action="{{ url('/logout') }}" id="logout-form" method="POST" style="display: none;">
+                                {{ csrf_field() }}
+                            </form>
                         </li>
                     </ul>
+                </li>
+            </ul>
+            @elseif (Route::has('login'))
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <a href="{{ url('/login') }}">
+                        Login
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ url('/register') }}">
+                        Register
+                    </a>
                 </li>
             </ul>
             @endif

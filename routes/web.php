@@ -15,7 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::group(['prefix' => 'admin'], function () {
+Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
+    //usa el middleware auth para evitar que usuarios sin autenticar ingresen a las vistas
 
     route::resource('users', 'UsersController');
 

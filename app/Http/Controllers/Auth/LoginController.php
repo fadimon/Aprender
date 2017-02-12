@@ -28,12 +28,23 @@ class LoginController extends Controller
     protected $redirectTo = '/home';
 
     /**
+     * Show the application's login form.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function showLoginForm() // muestra el formulario de logueo
+
+    {
+        return view('auth.login');
+    }
+
+    /**
      * Create a new controller instance.
      *
      * @return void
      */
     public function __construct()
     {
-        $this->middleware('guest', ['except' => 'logout']);
+        $this->middleware('guest', ['except' => 'logout']); // controla que el usuario que ingreso al sistema no pueda volver al login o al registro de usuarios.
     }
 }

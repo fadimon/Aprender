@@ -21,6 +21,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('home'); //muestra esta vista cuando el usuario se loguea satisfactoriamente. La vista debe estar en views
     }
+
 }

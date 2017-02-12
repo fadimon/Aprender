@@ -28,14 +28,7 @@
                     </div>
                 </div>
             </section>
-            <footer class="bordes">
-                <p>
-                    © Copyright 2016 - 2017. Tipmatik.Cl. All Rights Reserved.
-                    <span class="pull-right">
-                        Codigo Facilito
-                    </span>
-                </p>
-            </footer>
+            @include('admin.template.partials.footer')
         </div>
         <script src="{{asset('Plugins/Jquery/js/jquery.js')}}">
         </script>
